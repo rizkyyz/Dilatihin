@@ -1,157 +1,271 @@
-Nama : M.Rizky Abdillah
-
-Nim : 312010386
-
-Kelas : TI 20.A2
-
-### PENGGUNAAN GIT 
-
-
-### APA ITU GIT ?
-* Git adalah salah satu sistem pengontrol versi (Version ControlSystem) pada proyek perangkat lunak yang diciptakan oleh Linux Torvalds.
-* Pengontrol versi bertugas mencatat setiap perubahan pada fileproyek yang dikerjakan oleh banyak orang maupun sendiri.
-* Git dikenal juga dengan distributed revision control (VCS terdistribusi),artinya penyimpanan database Git tidak hanya berada dalam satutempat saja.
-
-
-### INSTALASI GIT
-* Download **Git**, buka website resminya Git `(git-scm.com)`.
-* Kemudian unduh Git sesuai dengan arsitektur komputer kita. Kalau menggunakan 64bit, unduh yang 64bit. Begitu juga kalau menggunakan 32bit.
-* Selamat, Git sudah terinstal di Windows. Untuk mencobanya,silahkan buka **CMD** atau **PowerShell**, kemudian ketik perintah
-
-``git --version``
-
-![ke 1](https://user-images.githubusercontent.com/66506609/96415020-24bfd980-1218-11eb-8f8f-eae7c16e7fbd.png)
-
-
-### Menambahkan Global Config
-* Pada saat pertama kali menggunakan git, perlu dilakukan konfigurasi ``user.name dan user.email``
-* konfigurasi ini bisa dilakukan untuk global repostiry atau individual repository.
-
-* apabila belum dilakukan konfigurasi, akan mengakibatkan terjadi kegagalan saat menjalankan perintah `git commit`
-
-* Config Global Repository
-
-`$ git config --global user.name “nama_user"`
-
-`$ git config --global user.email “nama_user”`
-
-![ke 2](https://user-images.githubusercontent.com/66506609/96415247-7a948180-1218-11eb-82d8-183ded5f877b.png)
-
-### Perintah Dasar Git
-
-* `git init`, perintah untuk membuat repository local
-* `git add`, perintah untuk menambahkan file baru, atau perubahan pada file pada staging sebelum proses commit.
-* `git commit`, perintah untuk menyimpan perubahan kedalam database git.
-* `git push -u origin master`, perintah untuk mengirim perubahan pada repository local menuju server repository.
-* `git clone [url]`, perintah untuk membuat working directory yang diambil dari repositry sever.
-* `git remote add origin [url]`, perintah untuk menambahkan remote server/reopsitory server pada local repositry ``(working directory)``
-* `git pull`, perintah untuk mengambil/mendownload perubahan terbaru dari server repository ke local repository
-
-
-### Membuat Reposiory Local
-
-* Buka direktory aktif, misal: **d:\labs_pemrograman1** (buka menggunakan Windows Explorer)
-* klik kanan pada direktory aktif tersebut, dan pilih menu **Git Bash**, sehingga muncul git bash commad
-* Buat direktory project praktikum pertama dengan nama **latihan1**
-``$ mkdir latihan1
-$ cd latihan1``
-* Sehingga terbentuk satu direktori baru dibawahnya, selanjutnya masuk kedalam direktori tersebut dengan perintah **cd** ``(change directory)``
-* direktory aktif menjadi: **d:\labs_pemrograman1\latihan1
-
-
-### Membuat Reposiory Local
-
-* Jalankan perintah **git init**, untuk membuat repository local.
-`$ git init`
-* Repository baru berhasil di inisialisasi, dengan terbentuknya satu direktori hidden dengan nama .**git**
-* Pada direktori tersebut, semua perubahan pada `working directory` akan disimpan.
-
-
-### Menambahkan File baru pada repository
-
-* Untuk membuat file dapat menggunakan text editor, lalu menyimpan filenya pada direktori aktif (repository)
-* disini kita akan coba buat satu file bernama README.md (text file)
-`$ echo “# Latihan 1” >> README.md`
-* File **README.md** berhasil dibuat.
-
-
-
-### Menambahkan File baru pada repository
-
-* Untuk menambahkan file yang baru saja dibuat tersebut gunakan perintah git add.
-`$ git add README.md`
-* File **README.md** berhasil ditambahkan.
-
-![Screenshot (50)](https://user-images.githubusercontent.com/66506609/96245078-221f7300-0fd1-11eb-9171-a25f2bdbfa35.png)
-
-
-### `Commit` (Menyimpan perubahan ke database)
-
-* Untuk menyimpan perubahan yang ada kedalam database repository local, gunakan perintah git commit -m “komentar commit”
-`$ git commit -m “File pertama saya”`
-* Perubahan berhasil disimpan.
-
-![20201016_163326 1](https://user-images.githubusercontent.com/66506609/96244442-43339400-0fd0-11eb-8fdb-45032a8ec449.png)
-
-	
-### Membuat repository server
-
-* Server reopsitory yang akan kita gunakan adalah (http://github.com)
-* Anda harus membuat akun terlebih dahulu.
-* Pada laman github, klik tombol start a project, atau
-* Dari menu (icon +) klik New Repository
-
-![Screenshot (39)](https://user-images.githubusercontent.com/66506609/95936476-da95bd00-0dff-11eb-826d-c7b34e2c45fc.png)
-
-
-### Membuat repository server
-
-* Isi nama repositorynya, misal: labpy1.
-* lalu klik tombol Create repository
-
-
-### Menambahkan Remote Repository
-
-* Remote Repository merupakan repository server yang akan digunakan untuk menyimpan setiap perubahan pada local repository, sehingga dapat diakses oleh banyak user.
-* Untuk menambahkan remote repository server, gunakan perintah **git remote add origin [url]**
-`$ git remote add origin https://github.com/rizkyy/Latihan-git.git`
-
-
-### Push (Mengirim perubahan ke server)
-
-* Untuk mengirim perubahan pada local repository ke server gunakan perintah git push.
-`$ git push -u origin master`
-* Perintah ini akan meminta memasukkan username dan password pada akun github.com
-
-![Screenshot (50)](https://user-images.githubusercontent.com/66506609/96245078-221f7300-0fd1-11eb-9171-a25f2bdbfa35.png)
-
-
-### Melihat hasilnya pada server repository
-
-* Buka laman github.com, arahkan pada repositorinya.
-* Maka perubahan akan terlihat pada laman tersebut.
-
-![Screenshot (41)](https://user-images.githubusercontent.com/66506609/95936958-eafa6780-0e00-11eb-85fa-262b7f92ef40.png)
-
-
-### Clone Repository
-
-* Clone repository, pada dasarnya adalah meng-copy repository server dan secara otomatis membuat satu direktory sesuai dengan nama repositorynya (working directory).
-* Untuk melakukan cloning, gunakan perintah `git clone [url]`
-
-![Screenshot (59)](https://user-images.githubusercontent.com/66506609/96254417-76c9ea80-0fdf-11eb-8af2-15adba4f4c33.png)
-
-### Kegunaan file README.md
-
-* Apabila kita menggunakan github, untuk memberikan penjelasan awal pada project yang kita buat, maka dapat menggunakan sebuah file yang bernama README.md
-* Pada file tersebut kita dapat membuat dokumentasi awal dari setiap project yang kita buat untuk memberikan penjelasan atau sekedar cara penggunaan dari aplikasi yang kita kembangkan.
-* Penulisan file README.md berbasis teks, dan untuk pemformatannya menggunakan Markdown format.
-* untuk lebih jelasnya, dapat anda pelajari cara penggunaan markdown pada url berikut: https://guides.github.com/features/mastering-markdown/
-
-
-
-### Author : Muhammad Rizky Abdillah
-
-![giphy](https://user-images.githubusercontent.com/66506609/96348807-a78c4b80-10d5-11eb-938f-cc36c9485771.gif)
-
-
+# Tugas Ini Untuk Melengkapi Pertemuan 6 <br>
+## Dan Menjelaskan Project <br>
+
+**NAMA : Muhammad Rizky Abdillah** <br>
+**NIM : 312010386** <br>
+**KELAS : TI.20.A.2** <br>
+**TUGAS : BAHASA PEMOGRAMAN** <br>
+
+## DAFTAR ISI <br>
+
+| NO | Description | Link |
+| ----- | ----- | ---- |
+| 1. | Pertemuan 5 - Latihan| [silahkan klik](#pertemuan-5---latihan) |
+| 2. | Pertemuan 6 - Lab 1 | [silahkan klik](#pertemuan-6---lab-1) |
+| 3. | Pertemuan 6 - Lab 1-2 | [silahkan klik](#pertemuan-6---lab-1-2) |
+| 4. | Pertemuan 6 - Lab 2 | [silahkan klik](#pertemuan-6---lab-2) |
+### Pertemuan 5 - Latihan
+
+Pada pertemuan 5 bahasa pemograman, saya diberi soal untuk latihan oleh Dosen untuk membuat Aplikasi Biodata dengan python (Seperti gambar di bawah ini:)
+![latihan pertemuan 5](gambar/foto 1.png)
+Saat ini saya akan menjelaskan hasil dari tugas tersebut. <br>
+Berikut *source code* nya atau klik berikut ([latihan 5](tugas5.py)): <br>
+``` python
+print "  ====================================" 
+print "        Latihan  Biodata Rizky        "
+print "  ===================================="
+#variabel
+nama= raw_input ("Masukan Nama Lengkap Anda: ")
+panggilan= raw_input ("Masukan Nama Panggilan: ")
+nim= raw_input ("Masukan Nim Anda: ")
+ttl= raw_input ("Masukan Tempat Lahir Anda`: ")
+tl= input ("Masukan Umur Anda: ")
+telpone= raw_input ("Masukan No Telpon Anda: ")
+alamat= raw_input ("Masukan Alamat Anda: ")
+
+
+#Menampilkan Inputan User
+print "\n Assalamu'alaikum Wr.Wb. "
+print "Let me introduce my self My name is",nama,"but you can call me",panggilan,".My NIM is",nim,"I was born in",ttl,"and I am",tl,"years old. I am very glad if you want to invite my house in",alamat,".So, don't forget to call me before with the number",telpone,
+print "\n Terimakasih Jangan Lupa Semangat"
+```
+
+* Berikut penjelasan :<br>
+``` python
+print("please your full name : ")
+```
+source code fiatas berfungsi untuk mencetak hasil / output berupa " **Masukan Nama Anda :** ". <br>
+ Untuk menampilkan output string, saya menggunakan *tanda petik dua* didalam fungsi print(), sedangkan jika saya ingin menampilkan output / hasil berupa angka / interger saya tidak perlu menggunakan *tanda petik dua*. Contohnya:
+ ``` python 
+ print("masukan nama anda ...")
+print(4646)
+```
+<br>(Seperti gambar berikut ini <br>)
+![Output fungsi print](gambar/foto 2.png) <br>
+* Untuk source code berikutnya adalah inputan atau membuat variable. Seperti syntax dibawah ini:
+
+``` python
+nama=raw_input()
+```
+Keterangan : <br>
+1. Variable adalah sebuah wadah penyimpanan data pada program yang akan digunakan selama program itu berjalan. Yang berfungsi sebagai variable dalam source code diatas adalah **fullname** . <br>
+
+2. Fungsi **input()** adalah untuk memasukan nilai dar layar console di command prompt, lalu kemudian mengembalikan nilai saat kita menekan tombol enter *(newline)* <br>
+![input](gambar/foto 3.png) <br>
+Pada gambar diatas, hasil dari inputan tersebut berwarna *putih* <br>
+* Untuk memasukan printah lain seperti *Nama, NIM, Tempat Lahir, Umur, No Telpon,* mengikuti perintah yang sama seperti memasukan *fullname* <br>
+
+* Untuk menghitung rumus umur saya menggunakan variable *DOB* yaitu 2020 (Tahun sekarang) dikurangi dengan Year of bircth, pada source code berikut : <br>
+``` python
+dob=2020-year
+```
+Pada syntax / source code diatas, saya menggunakan variable *dob* dimana untuk menghitung umur (variable **age** pada output), yaitu dengan rumus pada variable *dob=2020-year* <br>
+
+* Langkah kali ini saya akan menampilkan output yang diminta oleh Dosen. <br>
+Output pertama yang di minta Dosen adalah menampilkan salam, yaitu dengan mengetikkan syntax / source code berikut : 
+``` python
+print("\n Asalammualaikum.")
+```
+Keterangan :
+1. Fungsi **\n** pada source code diatas adalah untuk memberi baris baru / enter / *newline*
+2. Fungsi print() seperti dijelaskan pada point **Output** diatas
+Hasil source code diatas adalah seperti gambar dibawah ini : <br>
+
+![Output salam](gambar/foto 4.png)
+* Langkah terakhir menampilkan semua hasil dari inputan diatas. Dengan mengetikan source code berikut : <br>
+``` python
+print "Let me introduce my self My name is",nama,"but you can call me",panggilan,
+".My NIM is",nim,"I was born in",ttl,"and I am",tl,"years old. I am very glad if you want to invite my house in",alamat,".So, don't forget to call me before with the number",telpone,
+```
+Keterangan : <br>
+* Fungsi huruf **f** pada perintah *print(f"....")* adalah fungsi print atau bisa memudahkan program dalam mencetak statement dalam suatu baris dibandingkan dengan metode yang lama yaitu memisahkan string dan variable dengan symbol koma ( , ) atau plus ( + ) <br>
+* Sedangkan fungsi {} pada output tersebut menampilkan hasil variable <br>
+Hasil dari output tersebut seperti berikut : <br>
+![alloutput](gambar/foto 5.png)
+<br>
+<br>
+<br>
+
+### Pertemuan 6 - lab 1
+
+Pada halaman ini (Tugas pertemuan 6 - lab 1) Saya di berikan tugas oleh Dosen yaitu mempelajari Operator Aritmatika menggunakan bahasa pemograman python. Berikut source yang di berikan oleh Dosen [source code lab 1](lab1.py)
+![Pertemmuan 6 - lab 1](gambar/foto 6.png)
+``` python
+#Penggunaan End
+print("A", end="")
+print("B", end="")
+print("C", end="")
+
+print()
+print("X")
+print("Y")
+print("Z")
+
+#Penggunaan Separator
+w,x,y,z=10,15,20,25
+print(w,x,y,z)
+print(w,x,y,z,sep=",")
+print(w,x,y,z,sep="")
+print(w,x,y,z,sep=":")
+print(w,x,y,z,sep="-----")
+```
+Oke, kali ini saya menjelaskan materi yang dijelaskan oleh Dosen. <br><br>
+
+* Penggunaan END
+Penggunaan end digunakan untuk menambahkan kata yang dicetak di akhir baris
+
+``` python
+print("A", end="")
+print("B", end="")
+print("C", end="")
+```
+
+> Penggunaan print() digunakan untuk mencetak output, seperti syntax dibawah ini : <br>
+``` python 
+print()
+```
+> Syntax dibawah ini digunakan untuk menampilkan output berupa string
+``` python
+print("X")
+print("Y")
+print("Z")
+```
+Hasil dari source code terseut seperti gambar di bawah ini: 
+![Output END](gambar/foto 7.png)
+
+* Pengertian separaktor
+Sepaktor adalah pemisah yang berfungsi sebagai tanda pemisah antar objek yang dicetak. Defaultnya adalah tanda sepasi <br><br>
+> Pendeklarasian beberapa variable berserta nilainya
+``` python
+w,x,y,z=10,15,20,25
+```
+> Menampilkan hasil setiap variable tiap-tiap variable
+``` python
+print(w,x,y,z)
+```
+> Menampilkan hasil variable dari tiap-tiap variable menggunakan pemisah , (koma)
+``` python
+print(w,x,y,z,sep=",")
+```
+> Menampilkan hasil variable dari tiap-tiap variable tanpa menggunakan pemisah
+``` python
+print(w,x,y,z,sep="")
+```
+> Menampilkan hasil variable dari tiap-tiap variable dengan menggunakan pemisah : (titik dua)
+``` python
+print(w,x,y,z,sep=":")
+```
+> Menampilkan hasil variable dari tiap-tiap variable dengan menggunakan pemisah ----
+``` python
+print(w,x,y,z,sep="-----")
+```
+
+Hasil dari syntax / source code diatas adalah seperti berikut iniL: <br>
+![Output Separator](gambar/foto 8.png)
+<br>
+<br>
+<br>
+### Pertemuan 6 - lab 1-2 
+* String format <br>
+String formatting atau pemformatan string memungkinkan kita menyuntikkan item kedalam string daripada kita mencoba menggabungkan string menggunakan koma atau string concatenation.<br>
+
+Penggunaan pada source yang di berikan Dosen sebagai berikut : <br>
+![Lab 1-2](gambar/foto 9.png) <br> 
+``` python
+#Rizky
+# string format 1
+print(0, 10 ** 0)
+print(1, 10 ** 1)
+print(2, 10 ** 2)
+print(3, 10 ** 3)
+print(4, 10 ** 4)
+print(5, 10 ** 5)
+print(6, 10 ** 6)
+print(7, 10 ** 7)
+print(8, 10 ** 8)
+print(9, 10 ** 9)
+print(10, 10 ** 10)
+
+# string format 2
+print('{0:>3}{1:>16})'.format(0, 10 ** 0))
+print('{0:>3}{1:>16})'.format(1, 10 ** 1))
+print('{0:>3}{1:>16})'.format(2, 10 ** 2))
+print('{0:>3}{1:>16})'.format(3, 10 ** 3))
+print('{0:>3}{1:>16})'.format(4, 10 ** 4))
+print('{0:>3}{1:>16})'.format(5, 10 ** 5))
+print('{0:>3}{1:>16})'.format(6, 10 ** 6))
+print('{0:>3}{1:>16})'.format(7, 10 ** 7))
+print('{0:>3}{1:>16})'.format(8, 10 ** 8))
+print('{0:>3}{1:>16})'.format(9, 10 ** 9))
+print('{0:>3}{1:>16})'.format(10, 10 ** 10))
+```
+<br>
+Saat ini saya akan menjelaskan satu persatu dari syntax yang diberikan oleh Dosen <br>
+Tugas yang di berikan oleh Dosen adalah seperti gambar dibawah ini atau bisa di temukan dengan link berikut : ([source code](lanjutan lab1.py))
+1. **String format 1** <br>
+Pada syntax / source code string format 1 akan menampilkan output berupa 2 outputan. <br>
+Yang pertama (sebelah kiri) akan menampilkan angka urut dari angka 0 hingga 10, sedangkan sebelah kanan akan menampilkan Oprasi Aritmatika Pangkat. <br>
+Dengan ketentuan sebagau berikut, oprasi pangkat dengan angka kiri sebagai pokok (Rumus : ** [Bintang dua]) <br>
+Hasil dari syntax tersebut adalah 10 pangkat 0, hingga 10 pangkat 10. Dengan output sebagai berikut : <br>
+
+![Operasi Aritmatika pangkat **](gambar/foto 10.png)<br><br>
+
+2. **String Format 2** <br><br>
+Pada syntax / source code string format 2 akan menampilkan output berupa 2 output'an juga (Seoerti string format 1, yaitu kanan dan kiri) <br>
+Dengan ketentuan sebagai berikut : <br>
+> > Alignment, padding, dan precesion dengan **.format()** dalam kurung kurawal kita dapat menetapkan panjang bidang, rata kanan/kiri, parameter pembulatan dan banyak lagi. Contoh lain seperti berikut :
+``` python
+print('{0:8} | {1:9}'.format('sepatu','Jumlah'))
+print('{0:8} | {1:9}'.format('dalas', 3.))
+print('{0:8} | {1:9}'.format('NB',10))
+```
+Hasil dari source code contoh di atas akan seperti berikut : <br>
+![OutPut Aligmnent contoh](gambar/foto 11.png)<br><br>
+> Secara default, **.format()** menggunakan rata text kiri, angka ke kanan. <,^, atau > untuk perataan kiri, tengah , atau kanan. Contoh lain dari penggunaan **.format()** sebagai berikut : <br>
+``` python
+print('{:<30}{:^30}{:>30}'.format('Kiri','Tengah','Kanan'))
+print('{:<30}{:^30}{:>30}'.format(12,34,56))
+```
+Hasil dari source code contohdiatas akan muncul seperti ini : <br>
+![Output Alignment](gambar/foto 12.png)
+<br>
+<br>
+Hasil string format 2 adalah : <br>
+![Output Alignment contoh 2](gambar/kanan 13.png)
+<br>
+<br>
+
+### Pertemuan 6 - Lab 2
+
+* Konversi Nilai Variable
+Untuk pembahasan terakhir, kali ini akan myenyelesaikan tugas Lab 2 dari Dosen, yaitu Konversi Nilai Variable <br>
+Tugas yang di berikan oleh Dosen adalah seperti gambar dibawah ini atau bisa di temukan dengan link berikut : ([source code](lab2.py))
+``` python
+a=int(input("Masukkan Nilai A : "))
+b=int(input("Masukkan Nilai B : "))
+print("Variable A : ",a)
+print("Variable B : ",b)
+print("Hasil penggabungan {1}&{0}=%d".format(a,b) %(a+b))
+
+#Konversi nilai variable
+a=int(a)
+b=int(b)
+print("Hasil penjumlahan {1}+{0}=%d".format(a,b) %(a+b))
+print("Hasil pembagian {1}/{0}=%d".format(a,b) %(a/b))
+```
+<br>
+Hasil dari source / code diatas : <br>
+
+![Output source diatas](gambar/foto 14.png)
+<br>
+<br>
